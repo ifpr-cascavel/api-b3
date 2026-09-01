@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta B3 - Cotações em Tempo Real</title>
+  <link rel="stylesheet" href="b3.css">
+</head>
+<body>
+
+  <main class="container">
+    <header class="header">
+      <h1>Consulta B3 📈</h1>
+      <p>Acompanhe cotações de ações da bolsa de valores</p>
+    </header>
+
+    <section class="search-box">
+      <input 
+        type="text" 
+        id="ticker-input" 
+        placeholder="Ex: PETR4, VALE3, ITUB4..." 
+        autocomplete="off"
+      >
+      <button id="search-btn">Buscar</button>
+    </section>
+
+    <div id="loading" class="hidden">Buscando dados na bolsa...</div>
+    <div id="error-message" class="error-card hidden"></div>
+
+    <section id="result-card" class="card hidden">
+      <div class="card-header">
+        <div>
+          <h2 id="stock-symbol">--</h2>
+          <span id="stock-name">--</span>
+        </div>
+        <img id="stock-logo" src="" alt="Logo da Empresa" class="hidden">
+      </div>
+
+      <div class="card-body">
+        <div class="price-container">
+          <span class="label">Preço Atual</span>
+          <div class="price-group">
+            <span id="stock-price" class="price">R$ 0,00</span>
+            <span id="stock-change" class="badge">0,00%</span>
+          </div>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="label">Mínima do Dia</span>
+            <span id="stock-low">R$ 0,00</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Máxima do Dia</span>
+            <span id="stock-high">R$ 0,00</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Última Atualização</span>
+            <span id="stock-time">--:--</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="b3.js"></script>
+</body>
+</html>
